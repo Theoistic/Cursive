@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cursive", "Cursive\Cursive.csproj", "{B204E061-0BFF-47D5-9C32-5697CEB935B4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CursiveLanguage", "CursiveLanguage\CursiveLanguage.csproj", "{FC5C90F3-58B7-47A6-9B4F-85D1552ED560}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B204E061-0BFF-47D5-9C32-5697CEB935B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B204E061-0BFF-47D5-9C32-5697CEB935B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B204E061-0BFF-47D5-9C32-5697CEB935B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B204E061-0BFF-47D5-9C32-5697CEB935B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC5C90F3-58B7-47A6-9B4F-85D1552ED560}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC5C90F3-58B7-47A6-9B4F-85D1552ED560}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC5C90F3-58B7-47A6-9B4F-85D1552ED560}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC5C90F3-58B7-47A6-9B4F-85D1552ED560}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0568134D-618C-4B63-A13C-B3A3D861E76A}
+	EndGlobalSection
+EndGlobal

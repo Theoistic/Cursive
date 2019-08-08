@@ -1,0 +1,58 @@
+{
+	"name": "cursive",
+	"displayName": "Cursive",
+	"publisher": "Theoistic",
+	"description": "The Cursive Language",
+	"version": "0.8.5",
+	"icon": "CursiveLogo128.png",
+	"engines": {
+		"vscode": "^1.36.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"activationEvents": [
+		"onDebug",
+		"onCommand:extension.cursive.cursiveexec",
+		"onCommand:extension.cursive.activated"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"languages": [{
+            "id": "cursive",
+            "aliases": ["Cursive", "cursive"],
+            "extensions": ["lewd"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "cursive",
+            "scopeName": "source.cursive",
+            "path": "./syntaxes/cursive.tmLanguage.json"
+        }],
+		"commands": [
+			{
+				"command": "extension.cursive.cursiveexec",
+				"title": "Compile and Run on using Cursive"
+			}
+		],
+		"keybindings": [{
+            "command": "extension.cursive.cursiveexec",
+            "key": "f5",
+            "mac": "f5"
+		}]
+	},
+	"scripts": {
+		"test": "node ./test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^5.2.6",
+		"@types/node": "^10.12.21",
+		"@types/vscode": "^1.36.0",
+		"eslint": "^5.13.0",
+		"glob": "^7.1.4",
+		"mocha": "^6.1.4",
+		"typescript": "^3.3.1",
+		"vscode-test": "^1.0.2"
+	}
+}

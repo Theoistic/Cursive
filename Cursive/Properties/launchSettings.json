@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Cursive": {
+      "commandName": "Project",
+      "commandLineArgs": "new -name \"loltest\""
+    }
+  }
+}

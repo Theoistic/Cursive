@@ -1,0 +1,120 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+	  <TargetFrameworks>netcoreapp2.1</TargetFrameworks>
+    <EnableDefaultCompileItems>False</EnableDefaultCompileItems>
+    <PackAsTool>true</PackAsTool>
+    <PackageOutputPath>./nupkg</PackageOutputPath>
+    <ToolCommandName>cursive</ToolCommandName>
+    <Version>0.8.4</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Theoistic</Authors>
+    <Description>The Cursive .NET Language, targets .NET Core / .NET Standard and resolves dependencies.</Description>
+    <PackageProjectUrl>https://Cursive.dev</PackageProjectUrl>
+    <PackageTags>.NET, Compiler, Language, Cursive, Theoistic</PackageTags>
+    <PackageReleaseNotes>This is the first release with .NET Core and .NET Standard build capabilities, previous build only build on .NET Framework.
+With utilities such as creating a new project, compile &amp; run, open ( VSCode )
+
+Releasing this as a dotnet tool which can be used independently from any IDE on all platforms.</PackageReleaseNotes>
+    <PackageLicenseFile>License.txt</PackageLicenseFile>
+    <PackageIconUrl>https://cursive.dev/wp-content/uploads/2019/07/CursiveIcon.png</PackageIconUrl>
+    <AssemblyVersion>0.8.4.0</AssemblyVersion>
+    <FileVersion>0.8.4.0</FileVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="nupkg\**" />
+    <None Remove="nupkg\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\CursiveLanguage\obj\Debug\netcoreapp2.1\CursiveBaseListener.cs">
+      <Link>Generated\CursiveBaseListener.cs</Link>
+    </Compile>
+    <Compile Include="..\CursiveLanguage\obj\Debug\netcoreapp2.1\CursiveBaseVisitor.cs">
+      <Link>Generated\CursiveBaseVisitor.cs</Link>
+    </Compile>
+    <Compile Include="..\CursiveLanguage\obj\Debug\netcoreapp2.1\CursiveLexer.cs">
+      <Link>Generated\CursiveLexer.cs</Link>
+    </Compile>
+    <Compile Include="..\CursiveLanguage\obj\Debug\netcoreapp2.1\CursiveListener.cs">
+      <Link>Generated\CursiveListener.cs</Link>
+    </Compile>
+    <Compile Include="..\CursiveLanguage\obj\Debug\netcoreapp2.1\CursiveParser.cs">
+      <Link>Generated\CursiveParser.cs</Link>
+    </Compile>
+    <Compile Include="..\CursiveLanguage\obj\Debug\netcoreapp2.1\CursiveVisitor.cs">
+      <Link>Generated\CursiveVisitor.cs</Link>
+    </Compile>
+    <Compile Include="CodeGen.cs" />
+    <Compile Include="CursiveTranslator.cs" />
+    <Compile Include="Debugging\CorDebug\CorAppDomain.cs" />
+    <Compile Include="Debugging\CorDebug\CorBreakpoint.cs" />
+    <Compile Include="Debugging\CorDebug\CorCode.cs" />
+    <Compile Include="Debugging\CorDebug\CorConstants.cs" />
+    <Compile Include="Debugging\CorDebug\CorController.cs" />
+    <Compile Include="Debugging\CorDebug\CorDebugger.cs" />
+    <Compile Include="Debugging\CorDebug\CorDebuggerOptions.cs" />
+    <Compile Include="Debugging\CorDebug\CorEvent.cs" />
+    <Compile Include="Debugging\CorDebug\CorFrame.cs" />
+    <Compile Include="Debugging\CorDebug\CorFunction.cs" />
+    <Compile Include="Debugging\CorDebug\CorModule.cs" />
+    <Compile Include="Debugging\CorDebug\CorProcess.cs" />
+    <Compile Include="Debugging\CorDebug\CorThread.cs" />
+    <Compile Include="Debugging\CorDebug\WrapperBase.cs" />
+    <Compile Include="Debugging\CorMetadata\CorMetadataImport.cs" />
+    <Compile Include="Debugging\CorMetadata\MetadataMethodInfo.cs" />
+    <Compile Include="Debugging\CorMetadata\MetadataType.cs" />
+    <Compile Include="Debugging\Debugger.cs" />
+    <Compile Include="Debugging\DebuggingFacility.cs" />
+    <Compile Include="Debugging\NativeApi\HResults.cs" />
+    <Compile Include="Debugging\NativeApi\ICLRHostingWrappers.cs" />
+    <Compile Include="Debugging\NativeApi\ICorDebugWrappers.cs" />
+    <Compile Include="Debugging\NativeApi\IMetadataWrappers.cs" />
+    <Compile Include="Debugging\NativeApi\NativeImports.cs" />
+    <Compile Include="Debugging\SourceBinding\CorSourcePosition.cs" />
+    <Compile Include="Debugging\SourceBinding\SourceFileReader.cs" />
+    <Compile Include="Debugging\Symbols\ISymBinder2.cs" />
+    <Compile Include="Debugging\Symbols\ISymConstant.cs" />
+    <Compile Include="Debugging\Symbols\ISymEncMethod.cs" />
+    <Compile Include="Debugging\Symbols\ISymENCUpdate.cs" />
+    <Compile Include="Debugging\Symbols\ISymReader2.cs" />
+    <Compile Include="Debugging\Symbols\ISymScope2.cs" />
+    <Compile Include="Debugging\Symbols\ISymSearchInfo.cs" />
+    <Compile Include="Debugging\Symbols\ISymWriter2.cs" />
+    <Compile Include="Debugging\Symbols\SymBinder.cs" />
+    <Compile Include="Debugging\Symbols\SymConstant.cs" />
+    <Compile Include="Debugging\Symbols\SymDocument.cs" />
+    <Compile Include="Debugging\Symbols\SymDocumentWriter.cs" />
+    <Compile Include="Debugging\Symbols\SymMethod.cs" />
+    <Compile Include="Debugging\Symbols\SymNamespace.cs" />
+    <Compile Include="Debugging\Symbols\SymReader.cs" />
+    <Compile Include="Debugging\Symbols\SymScope.cs" />
+    <Compile Include="Debugging\Symbols\SymSearchInfo.cs" />
+    <Compile Include="Debugging\Symbols\SymSearchPolicyAttributes.cs" />
+    <Compile Include="Debugging\Symbols\SymVariable.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="NCMD.cs" />
+    <Compile Include="PackageManager.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Config.cs" />
+    <Compile Include="Utils.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Antlr4.Runtime" Version="4.6.6" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="3.1.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="System.Runtime.Loader" Version="4.3.0" />
+    <PackageReference Include="System.Runtime.Serialization.Json" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="License.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>

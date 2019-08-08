@@ -1,0 +1,32 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Cursive",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.cursive",
+				"match": "\\b(the|as|is a|is|halla|clusterfuck|bitching|bitchin|jizz|thundercunt|else if|else|then jizzslurp|then|if|exploited cunt known as|do|until jizzed upon|fuckstrangle|cum stain|with|fucking|cum drop|as a|exploited cumdumpster|exploited cumdumpsters|called|known as|dick cheese|static|public|readonly|protected|override|virtual|async|private|plus|minus|multipliy|multiplied|divide|divided|equals|not equals|not equal|bigger than|bigger or equal to|less than|less than or equal to)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.cursive",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.cursive",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.cursive"
+}
